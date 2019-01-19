@@ -21,7 +21,7 @@ public class Service {
 		return repository.selectAllDirector();
 	}
 	public List<Film> selectAllPelicula() {
-		return repository.selectAllPelicula();
+		return repository.selectAllFilm();
 	}
 	
 	public void insert(Actor actor) {
