@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 import es.salesianos.service.Service;
 import es.salesianos.service.Service;
 
@@ -26,7 +26,7 @@ public class PeliculaServlet extends HttpServlet {
 		String codString = req.getParameter("cod");
 		String title = req.getParameter("title");
 		String codDirectorString = req.getParameter("codDirector");
-		Pelicula pelicula = new Pelicula();
+		Film pelicula = new Film();
 		int cod = Integer.parseInt(codString);
 		pelicula.setCod(cod);
 		int codDirector = Integer.parseInt(codDirectorString);
@@ -41,7 +41,7 @@ public class PeliculaServlet extends HttpServlet {
 		String codString = req.getParameter("cod");
 		
 		if(null != codString) {
-			Pelicula pelicula = new Pelicula();
+			Film pelicula = new Film();
 			int cod = Integer.parseInt(codString);
 			pelicula.setCod(cod);
 			service.delete(pelicula);
@@ -50,7 +50,7 @@ public class PeliculaServlet extends HttpServlet {
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Pelicula> selectAllPelicula = service.selectAllPelicula();
+		List<Film> selectAllPelicula = service.selectAllPelicula();
 		req.setAttribute("listAllPeliculas", selectAllPelicula);
 		redirect(req, resp);
 	}

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 import es.salesianos.repository.Repository;
 
 public class Service {
@@ -20,7 +20,7 @@ public class Service {
 	public List<Director> selectAllDirector() {
 		return repository.selectAllDirector();
 	}
-	public List<Pelicula> selectAllPelicula() {
+	public List<Film> selectAllPelicula() {
 		return repository.selectAllPelicula();
 	}
 	
@@ -28,7 +28,7 @@ public class Service {
 		repository.insert(actor);
 
 	}
-	public void insert(Pelicula pelicula) {
+	public void insert(Film pelicula) {
 		repository.insert(pelicula);
 		
 	}
@@ -40,7 +40,7 @@ public class Service {
 		repository.delete(actor);
 
 	}
-	public void delete(Pelicula pelicula) {
+	public void delete(Film pelicula) {
 		repository.delete(pelicula);
 		
 	}

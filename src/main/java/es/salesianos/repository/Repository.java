@@ -11,7 +11,7 @@ import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 
 public class Repository {
 
@@ -40,7 +40,7 @@ public class Repository {
 	}
 	
 	
-	public void insert(Pelicula pelicula) {
+	public void insert(Film pelicula) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
@@ -97,7 +97,7 @@ public class Repository {
 
 	}
 	
-	public void delete(Pelicula actor) {
+	public void delete(Film actor) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
@@ -185,16 +185,16 @@ public class Repository {
 		return list;
 	}
 	
-	public List<Pelicula> selectAllPelicula() {
+	public List<Film> selectAllPelicula() {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
-		List<Pelicula> list = new ArrayList<Pelicula>();
+		List<Film> list = new ArrayList<Film>();
 		try {
 			preparedStatement = conn
 					.prepareStatement("SELECT * FROM PELICULA");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				Pelicula director = new Pelicula();
+				Film director = new Film();
 				director.setCod(resultSet.getInt(0));
 				director.setTitle(resultSet.getString(1));
 				director.setCodDirector(resultSet.getInt(2));
