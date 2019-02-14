@@ -8,8 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<%List<Actor> listAllActors = (List<Actor>) request.getAttribute("listAllActors");%>
-
 	<form action="/actor" method="post">
 		<span>name: </span> <input type="text" name="name"> 
 		<br /> 
@@ -20,8 +18,8 @@
 	<br />
 	<br />
 	<form action="/actor" method="get">
-		<span>From:</span><input type="text" name="beginDate">
-		<span>To:</span><input type="text" name="endDate">
+		<span>Begin Date:</span><input type="text" name="beginDate">
+		<span>End Date:</span><input type="text" name="endDate">
 		<input type="submit">
 	</form>
 	<br />

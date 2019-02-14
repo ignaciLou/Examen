@@ -11,7 +11,7 @@ import es.salesianos.repository.FilmActorRepository;
 public class FilmActorService {
 	
 	@Autowired
-	FilmActorRepository filmActorRepository;
+	static FilmActorRepository filmActorRepository;
 
 	public static DirectorActorFilm filterAllFilmActor(String role) {
 		return filmActorRepository.filterAllFilmActor(role);
